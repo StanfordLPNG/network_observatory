@@ -1,0 +1,16 @@
+  <div class="container">
+
+
+<h2>Page View Report</h2>
+
+
+<ul>
+
+{% for checkin in checkins %}
+    <li>{{ checkin.datetime }}</li>
+    <li>{{ checkin.choice_text }}</li>
+{% endfor %}
+
+</ul>
+
+</div>
