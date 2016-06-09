@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+import measurement_box_monitor.views
+
 urlpatterns = [
+    url(r'^$', measurement_box_monitor.views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
 ]
