@@ -4,4 +4,5 @@ from django.db import models
 class MeasurementBoxCheckin(models.Model):
     hostname = models.CharField(max_length=256)
     datetime = models.DateTimeField('checkin time')
-    choice_text = models.CharField(max_length=400)
+    git_head = models.CharField(max_length=40)
+    temp = models.DecimalField(max_digits=4, decimal_places=1)

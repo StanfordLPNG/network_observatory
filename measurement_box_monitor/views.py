@@ -17,7 +17,9 @@ def do_checkin(request):
             checkin = MeasurementBoxCheckin()
             checkin.hostname = request.POST['hostname']
             checkin.datetime = request.POST['datetime']
-            checkin.choice_text = request.POST['payload']
+            checkin.git_head = request.POST['head']
+            checkin.temp = request.POST['temp']
+
         except Exception as e:
             return HttpResponse("failed to post checkin, error: " + e.message)
 

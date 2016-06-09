@@ -7,7 +7,8 @@
 {% for checkin in checkins %}
     <li>{{ checkin.hostname }}</li>
     <li>{{ checkin.datetime }}</li>
-    <li>{{ checkin.choice_text }}</li>
+    <li>{{ checkin.git_head }}</li>
+    <li>{{ checkin.temp }}</li>
 {% endfor %}
 
 </ul>
