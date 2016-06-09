@@ -7,10 +7,10 @@ from .models import MeasurementBoxCheckin
 def index(request):
     checkins = MeasurementBoxCheckin.objects.all()
 
-    return render(request, 'checkin.html', {'checkins': checkins })
+    return render(request, 'view_checkins.html', {'checkins': checkins })
     #return HttpResponse("Hello world. We made it.")
 
-#def do_checkin(request):
-#    checkin = MeasurementBoxCheckin()
-#    checkin.save()
-#    return HttpResponse('Hello! ' * times)
+def do_checkin(request):
+    checkin = MeasurementBoxCheckin()
+    checkin.save()
+    return render(request, 'add_checkin.html', {'checkin': checkin })

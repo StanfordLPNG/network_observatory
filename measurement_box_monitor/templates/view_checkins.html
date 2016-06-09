@@ -1,12 +1,11 @@
-  <div class="container">
-
+<div class="container">
 
 <h2>Measurement Box Checkins</h2>
-
 
 <ul>
 
 {% for checkin in checkins %}
+    <li>{{ checkin.hostname }}</li>
     <li>{{ checkin.datetime }}</li>
     <li>{{ checkin.choice_text }}</li>
 {% endfor %}
