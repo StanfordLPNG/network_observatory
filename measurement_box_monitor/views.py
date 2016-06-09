@@ -9,7 +9,6 @@ def index(request):
     checkins = MeasurementBoxCheckin.objects.all()
 
     return render(request, 'view_checkins.html', {'checkins': checkins })
-    #return HttpResponse("Hello world. We made it.")
 
 @csrf_exempt
 def do_checkin(request):
