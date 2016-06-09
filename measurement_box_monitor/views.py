@@ -5,8 +5,12 @@ from .models import MeasurementBoxCheckin
 
 # Create your views here.
 def index(request):
-
     checkins = MeasurementBoxCheckin.objects.all()
 
     return render(request, 'checkin.html', {'checkins': checkins })
     #return HttpResponse("Hello world. We made it.")
+
+#def do_checkin(request):
+#    checkin = MeasurementBoxCheckin()
+#    checkin.save()
+#    return HttpResponse('Hello! ' * times)
