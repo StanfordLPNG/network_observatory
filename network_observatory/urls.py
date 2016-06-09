@@ -20,5 +20,6 @@ import measurement_box_monitor.views
 
 urlpatterns = [
     url(r'^$', measurement_box_monitor.views.index, name='index'),
+    url(r'^post-measurement-box-checkin', measurement_box_monitor.views.do_checkin, name='do_checkin'),
     url(r'^admin/', include(admin.site.urls)),
 ]
