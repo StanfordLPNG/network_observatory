@@ -6,7 +6,7 @@ from .models import MeasurementBoxCheckin
 
 # Create your views here.
 def index(request):
-    checkins = MeasurementBoxCheckin.objects.order_by('datetime').distinct('datetime', 'hostname')
+    checkins = MeasurementBoxCheckin.objects.order_by('hostname', '-datetime').distinct('hostname')
 
     return render(request, 'view_checkins.html', {'checkins': checkins })
 
