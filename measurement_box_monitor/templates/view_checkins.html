@@ -17,7 +17,8 @@
 <tr>
     <td>{{ checkin.hostname }}</td>
     <td>{{ checkin.datetime }}</td>
-    <td>{{ checkin.datetime|timesince }}</td>
+    <td {% if checkin.late %} class="bg-danger" {% endif %} >
+    {{ checkin.datetime|timesince }}</td>
 </tr>
 {% endfor %}
 </table>

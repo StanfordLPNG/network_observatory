@@ -1,12 +1,18 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
+import datetime
+
 from django.http import HttpResponse
+from django.utils import timezone
 from .models import MeasurementBoxCheckin
 
 # Create your views here.
 def index(request):
     checkins = MeasurementBoxCheckin.objects.order_by('hostname', '-datetime').distinct('hostname')
+    one_hour_ago = timezone.now() - datetime.timedelta(hours = 1)
+    for checkin in checkins:
+        checkin.late = checkin.datetime <= one_hour_ago
 
     return render(request, 'view_checkins.html', {'checkins': checkins })
 
