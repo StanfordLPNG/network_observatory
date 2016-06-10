@@ -1,16 +1,23 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 <div class="container">
 
 <h2>Measurement Box Checkins</h2>
 
-<ul>
+<p>
+</p>
 
+<table class="table table-striped">
+<tr>
+<th>Hostname</th>
+<th>Last checkin time (UTC)</th>
+</tr>
 {% for checkin in checkins %}
-    <li>{{ checkin.hostname }}</li>
-    <li>{{ checkin.datetime }}</li>
-    <li>{{ checkin.git_head }}</li>
-    <li>{{ checkin.temp }}</li>
+<tr>
+    <td>{{ checkin.hostname }}</td>
+    <td>{{ checkin.datetime }}</td>
+</tr>
 {% endfor %}
-
-</ul>
+</table>
 
 </div>
