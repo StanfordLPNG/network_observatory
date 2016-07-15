@@ -10,12 +10,18 @@
 <table class="table table-striped">
 <tr>
 <th>Hostname</th>
+<th>Location</th>
+<th>Hardware</th>
+<th>Connection Type</th>
 <th>Last checkin time (UTC)</th>
 <th>Time since last checkin</th>
 </tr>
 {% for checkin in checkins %}
 <tr>
     <td>{{ checkin.hostname }}</td>
+    <td>{{ checkin.location }}</td>
+    <td>{{ checkin.hardware }}</td>
+    <td>{{ checkin.connection_type }}</td>
     <td>{{ checkin.datetime }}</td>
     <td {% if checkin.late %} class="bg-danger" {% endif %} >
     {{ checkin.datetime|timesince }}</td>

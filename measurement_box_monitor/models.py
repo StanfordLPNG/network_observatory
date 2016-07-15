@@ -6,3 +6,11 @@ class MeasurementBoxCheckin(models.Model):
     datetime = models.DateTimeField('checkin time')
     git_head = models.CharField(max_length=40)
     temp = models.DecimalField(max_digits=4, decimal_places=1)
+
+class MeasurementBox(models.Model):
+    hostname = models.CharField(max_length=256)
+    hardware = models.CharField(max_length=256)
+    software = models.CharField(max_length=256)
+    connection_type = models.CharField(max_length=256)
+    location = models.CharField(max_length=256)
+    notes = models.CharField(max_length=1024)
