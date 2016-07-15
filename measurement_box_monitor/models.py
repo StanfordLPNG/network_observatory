@@ -13,4 +13,4 @@ class MeasurementBox(models.Model):
     software = models.CharField(max_length=256)
     connection_type = models.CharField(max_length=256)
     location = models.CharField(max_length=256)
-    notes = models.CharField(max_length=1024)
+    notes = models.CharField(max_length=1024, blank=True)
