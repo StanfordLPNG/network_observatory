@@ -41,6 +41,8 @@ def do_checkin(request):
             checkin.datetime = request.POST['datetime']
             checkin.git_head = request.POST['head']
             checkin.temp = request.POST['temp']
+            if 'uptime' in request.POST:
+                checkin.uptime = request.POST['uptime']
 
         except Exception as e:
             return HttpResponse("failed to post checkin, error: " + e.message)
