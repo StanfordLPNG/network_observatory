@@ -13,6 +13,7 @@
 <th>Location</th>
 <th>Hardware</th>
 <th>Connection Type</th>
+<th>Software Version</th>
 <th>Last checkin time (UTC)</th>
 <th>Time since last checkin</th>
 </tr>
@@ -22,6 +23,7 @@
     <td>{{ checkin.location }}</td>
     <td>{{ checkin.hardware }}</td>
     <td>{{ checkin.connection_type }}</td>
+    <td> <a href="https://github.com/StanfordLPNG/diagnostic_box_scripts/tree/{{ checkin.git_head }}">{{ checkin.git_head|slice:":7" }}</a></td>
     <td>{{ checkin.datetime }}</td>
     <td {% if checkin.late %} class="bg-danger" {% endif %} >
     {{ checkin.datetime|timesince }}</td>
