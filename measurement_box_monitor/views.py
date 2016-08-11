@@ -17,17 +17,17 @@ def index(request):
         # defaults in case hostname is not in MeasurementBox table
         displayed_checkin.hardware = "unknown"
         displayed_checkin.software = "unknown"
-        displayed_checkin.connection_type = "unknown" 
-        displayed_checkin.location = "unknown" 
+        displayed_checkin.connection_type = "unknown"
+        displayed_checkin.location = "unknown"
 
         # Only want a single object but use filter and for loop because we don't want website to blow up if one doesn't exist
         box_infos = MeasurementBox.objects.filter(hostname=displayed_checkin.hostname)
 
         for box_info in box_infos:
-            displayed_checkin.hardware = box_info.hardware 
+            displayed_checkin.hardware = box_info.hardware
             displayed_checkin.software = box_info.software
-            displayed_checkin.connection_type = box_info.connection_type 
-            displayed_checkin.location = box_info.location 
+            displayed_checkin.connection_type = box_info.connection_type
+            displayed_checkin.location = box_info.location
 
 
     return render(request, 'view_checkins.html', {'checkins': checkins })
