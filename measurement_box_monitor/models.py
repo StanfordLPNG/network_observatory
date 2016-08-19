@@ -7,6 +7,7 @@ class MeasurementBoxCheckin(models.Model):
     git_head = models.CharField(max_length=40)
     temp = models.DecimalField(max_digits=4, decimal_places=1)
     uptime = models.CharField(max_length=256, default='')
+    public_ip = models.CharField(max_length=40, default='')
 
 class MeasurementBox(models.Model):
     hostname = models.CharField(max_length=256)

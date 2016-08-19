@@ -43,6 +43,8 @@ def do_checkin(request):
             checkin.temp = request.POST['temp']
             if 'uptime' in request.POST:
                 checkin.uptime = request.POST['uptime']
+            if 'public_ip' in request.POST:
+                checkin.public_ip = request.POST['public_ip']
 
         except Exception as e:
             return HttpResponse("failed to post checkin, error: " + e.message)
